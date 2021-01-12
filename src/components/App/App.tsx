@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Background />
+      <Background video="/time.mp4" />
     </div>
   );
 }
