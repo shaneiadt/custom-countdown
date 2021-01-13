@@ -6,7 +6,7 @@ export default ({ video = '' }: { video?: string }) => {
     <Fragment>
       {video.length > 1 &&
         <div>
-          <video class="video-background" loop muted autoPlay>
+          <video className="video-background" loop muted autoPlay>
             <source src={video}></source>
           </video>
           <div className="video-overlay"></div>
