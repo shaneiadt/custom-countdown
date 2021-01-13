@@ -1,0 +1,26 @@
+/* Container */
+.container {
+  position: relative;
+  max-width: 580px;
+  min-height: 304px;
+  color: black;
+  margin: 0 auto;
+  padding: 25px 50px;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.input-container {
+  position: relative;
+  top: 20px;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
