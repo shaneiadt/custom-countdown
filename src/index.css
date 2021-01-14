@@ -13,26 +13,6 @@ body {
   font-family: Nunito, 'sans-serif';
 }
 
-
-/* Countdown */
-ul {
-  margin-left: -45px;
-}
-
-li {
-
-  font-size: 30px;
-  list-style-type: none;
-  padding: 10px;
-  text-transform: uppercase;
-}
-
-li span {
-  display: block;
-  font-size: 80px;
-  text-align: center;
-}
-
 /* Complete */
 .complete {
   position: relative;
