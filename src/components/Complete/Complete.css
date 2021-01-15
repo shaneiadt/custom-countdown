@@ -1,0 +1,28 @@
+/* Complete */
+.complete {
+  position: relative;
+  top: 60px;
+}
+
+.complete-title {
+  animation: complete 4s infinite;
+}
+
+@keyframes complete {
+  0% {
+    color: rgb(240, 139, 45);
+  }
+  25% {
+    color: rgb(235, 250, 23);
+  }
+  50% {
+    color: rgb(63, 255, 56);
+    transform: scale(1.5);
+  }
+  75% {
+    color: rgb(59, 231, 253);
+  }
+  100% {
+    color: rgb(124, 53, 255);
+  }
+}
