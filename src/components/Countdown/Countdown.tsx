@@ -1,7 +1,8 @@
 import { h } from 'preact';
 import './Countdown.css';
 
-export default () => {
+export default ({ title, date, done }: { title: string, date: string, done: () => void }) => {
+  console.log({ title, date });
   return (
     <div className="container">
       <div className="countdown" id="countdown">

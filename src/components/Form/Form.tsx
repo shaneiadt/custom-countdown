@@ -1,18 +1,20 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useRef, useEffect } from 'preact/hooks';
 import './Form.css';
 
 export default ({ submit }: { submit: (e: Event) => void }) => {
     const [title, setTitle] = useState('');
+    const datePicker = useRef<HTMLInputElement>(null);
 
     const updateTitle = (e: Event) => {
         const { value } = e.target as HTMLInputElement;
         setTitle(value);
     }
-    
-    const updateDate = (e: Event) => {
-        console.log(e);
-    }
+
+    useEffect(() => {
+        const today = new Date().toISOString();
+        datePicker.current.setAttribute('min', today.split('T')[0]);
+    }, []);
 
     return (
         <div className="container">
@@ -23,7 +25,7 @@ export default ({ submit }: { submit: (e: Event) => void }) => {
                     <input type="text" id="title" placeholder="What are you counting down to?" onInput={updateTitle} value={title} />
 
                     <label htmlFor="date-picker" className="date-picker">Select a Date</label>
-                    <input type="date" id="date-picker" onChange={updateDate} />
+                    <input ref={datePicker} type="date" id="date-picker" />
 
                     <button type="submit">Submit</button>
                 </form>

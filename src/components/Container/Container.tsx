@@ -10,8 +10,17 @@ export default () => {
 
   function submit(e: Event) {
     e.preventDefault();
-    console.log('SUBMITTED IT!');
-    setView(<Countdown />);
+
+    const target = e.target as HTMLFormElement;
+    const title = (target[0] as HTMLInputElement).value;
+    const date = (target[1] as HTMLDataElement).value;
+
+    setView(<Countdown title={title} date={date} done={done} />);
+  }
+
+  function done() {
+    console.log('DONE');
+    setView(<Complete />);
   }
 
   return (
