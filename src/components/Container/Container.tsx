@@ -15,7 +15,11 @@ export default () => {
     const title = (target[0] as HTMLInputElement).value;
     const date = (target[1] as HTMLDataElement).value;
 
-    setView(<Countdown title={title} date={date} done={done} />);
+    setView(<Countdown title={title} date={date} done={done} reset={reset} />);
+  }
+
+  function reset() {
+    setView(<Form submit={submit} />);
   }
 
   function done() {
