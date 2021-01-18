@@ -1,13 +1,14 @@
 import { h } from 'preact';
 import './Complete.css';
 
-export default () => {
+export default ({ title, date, reset }: { title: string, date: string, reset: () => void }) => {
+  console.log(title, date);
   return (
     <div className="container">
       <div className="complete" id="complete">
         <h1 className="complete-title">Countdown Complete</h1>
-        <h1 id="complete-info">TITLE Countdown Finished on 05-05-2020</h1>
-        <button id="complete-button">New Countdown</button>
+        <h1 id="complete-info">{title} Countdown Finished on {date}</h1>
+        <button id="complete-button" onClick={reset}>New Countdown</button>
       </div>
     </div>
   );

@@ -6,9 +6,10 @@ import Complete from '../Complete/Complete';
 import './Container.css';
 
 export default () => {
-  const [view, setView] = useState(<Form submit={submit} />);
+  const [container, setContainer] = useState({ title: '', date: '' });
+  const [finished, setFinished] = useState(false);
 
-  function submit(e: Event) {
+  const submit = (e: Event) => {
     e.preventDefault();
 
     const target = e.target as HTMLFormElement;
@@ -20,21 +21,26 @@ export default () => {
       return;
     };
 
-    setView(<Countdown title={title} date={date} done={done} reset={reset} />);
+    setContainer({
+      title,
+      date
+    });
   }
 
-  function reset() {
-    setView(<Form submit={submit} />);
+  const reset = () => {
+    setContainer({ title: '', date: '' });
+    setFinished(false);
   }
 
-  function done() {
-    console.log('DONE');
-    setView(<Complete />);
+  const done = () => {
+    setFinished(true);
   }
 
   return (
     <Fragment>
-      {view}
+      {!finished && container.title === '' || container.date === '' ? <Form submit={submit} /> : null}
+      {!finished && container.title.length > 1 && container.date.length > 1 ? <Countdown title={container.title} date={container.date} done={done} reset={reset} /> : null}
+      {finished ? <Complete title={container.title} date={container.date} reset={reset} /> : null}
     </Fragment>
   );
 };

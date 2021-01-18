@@ -12,7 +12,7 @@ export default ({ title, date, done, reset }: { title: string, date: string, don
     const interval = setInterval(() => {
       let distance = countDownValue - new Date().getTime();
 
-      console.log(distance);
+      if (distance < 0) done();
 
       const second = 1000;
       const minute = second * 60;
