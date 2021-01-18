@@ -21,10 +21,10 @@ export default ({ title, date, done, reset }: { title: string, date: string, don
       <div className="countdown" id="countdown">
         <h1 id="countdown-title">{title}</h1>
         <ul>
-          <li><span></span>Days</li>
-          <li><span></span>Hours</li>
-          <li><span></span>Minutes</li>
-          <li><span></span>Seconds</li>
+          <li><span>{days}</span>Days</li>
+          <li><span>{hours}</span>Hours</li>
+          <li><span>{minutes}</span>Minutes</li>
+          <li><span>{seconds}</span>Seconds</li>
         </ul>
         <button id="countdown-button" onClick={reset}>Reset</button>
       </div>
