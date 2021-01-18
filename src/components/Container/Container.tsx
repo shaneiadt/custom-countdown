@@ -15,6 +15,11 @@ export default () => {
     const title = (target[0] as HTMLInputElement).value;
     const date = (target[1] as HTMLDataElement).value;
 
+    if (title.length <= 1 || isNaN(new Date(date).getTime())) {
+      alert('Enter a title & select a date to start the countdown');
+      return;
+    };
+
     setView(<Countdown title={title} date={date} done={done} reset={reset} />);
   }
 

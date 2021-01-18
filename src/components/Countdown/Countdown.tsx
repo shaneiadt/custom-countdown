@@ -10,13 +10,14 @@ export default ({ title, date, done, reset }: { title: string, date: string, don
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('INTERVAL');
+      let distance = countDownValue - new Date().getTime();
+
+      console.log(distance);
+
       const second = 1000;
       const minute = second * 60;
       const hour = minute * 60;
       const day = hour * 24;
-
-      let distance = countDownValue - new Date().getTime();
 
       const days = Math.floor(distance / day);
       const hours = Math.floor((distance % day) / hour);
