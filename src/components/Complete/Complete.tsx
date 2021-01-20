@@ -2,7 +2,6 @@ import { h } from 'preact';
 import './Complete.css';
 
 export default ({ title, date, reset }: { title: string, date: string, reset: () => void }) => {
-  console.log(title, date);
   return (
     <div className="container">
       <div className="complete" id="complete">
